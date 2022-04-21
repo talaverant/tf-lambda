@@ -17,6 +17,15 @@ terraform {
   required_version = "~> 1.0"
 }
 
+// External variables
+variable "access_key" {
+  type = string
+}
+
+variable "secret_key" {
+  type = string
+}
+
 provider "aws" {
   region = var.aws_region
   access_key = var.access_key

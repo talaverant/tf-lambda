@@ -35,5 +35,3 @@ terraform.rc
 hello-world.zip
 response.json
 
-# Ignore secrets. Don't want keys in Git
-secrets.yaml
