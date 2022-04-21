@@ -21,11 +21,13 @@ provider "aws" {
   region = var.aws_region
 }
 
+// random name for S3 bucket
 resource "random_pet" "lambda_bucket_name" {
-  prefix = "learn-terraform-functions"
+  prefix = "tf-lambda"
   length = 4
 }
 
+// Keep bucket private
 resource "aws_s3_bucket_public_access_block" "private" {
   bucket = random_pet.lambda_bucket_name.id
 
