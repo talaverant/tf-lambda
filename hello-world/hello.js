@@ -2,11 +2,19 @@
 
 module.exports.handler = async (event) => {
   console.log('Event: ', event);
-  let responseMessage = 'Hello, World!';
+  let greeting = 'Hello';
+  let name = 'World';
 
-  if (event.queryStringParameters && event.queryStringParameters['Name']) {
-    responseMessage = 'Hello ' + event.queryStringParameters['Name'] + '!'
+  if (event.queryStringParameters) {
+    if (event.queryStringParameters['Name']) {
+      name = event.queryStringParameters['Name'];
+    }
+    if (event.queryStringParameters['Greeting']) {
+        greeting = event.queryStringParameters['Greeting'];
+    }
   }
+
+  let responseMessage = greeting + ' ' + name + '!';
 
   return {
     statusCode: 200,
