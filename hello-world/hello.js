@@ -14,6 +14,7 @@ module.exports.handler = async (event) => {
     }
   }
 
+  // build the response
   let responseMessage = greeting + ' ' + name + '!';
 
   return {
