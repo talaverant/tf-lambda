@@ -65,3 +65,4 @@ pei "git commit -m 'deploy AWS Lambda'"
 pei "git push"
 sleep 2
 
+pei "kubectl -n flux-system get terraform -w"
