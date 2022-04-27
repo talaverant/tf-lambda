@@ -22,7 +22,7 @@ cd $MANAGEMENT_DIR
 pei "# Add Helm repository"
 $SOURCE_DIR/scripts/helm-repo.sh > helm-repo-tf-controller.yaml
 pei "cat helm-repo-tf-controller.yaml"
-sleep 2
+sleep 5
 pei "clear"
 pei "# Add Helm release"
 $SOURCE_DIR/scripts/helm-tf-controller.sh > helm-tf-controller.yaml
@@ -30,7 +30,7 @@ pei "cat helm-tf-controller.yaml"
 pei "git add ."
 pei "git commit -m 'deploy terraform controller'"
 pei 'git push'
-sleep 2
+sleep 5
 
 while true
 do
@@ -41,28 +41,28 @@ do
     then
         break
     fi
-    sleep 2
+    sleep 5
 done
-sleep 2
+sleep 5
 
 pei "# Terraform controller deployed via Helm"
-sleep 2
+sleep 5
 pei "clear"
 pei "flux get all"
-sleep 2
+sleep 5
 
 pei "clear"
 pei "# Add GitHub repo"
 $SOURCE_DIR/scripts/git-repo.sh > git-repo.yaml
 pei "cat git-repo.yaml"
-sleep 2
+sleep 5
 pei "clear"
 $SOURCE_DIR/scripts/aws-lambda.sh > aws-lambda.yaml
 pei "cat aws-lambda.yaml"
-sleep 2
+sleep 5
 pei "git add ."
 pei "git commit -m 'deploy AWS Lambda'"
 pei "git push"
-sleep 2
+sleep 5
 
 pei "kubectl -n flux-system get terraform -w"
