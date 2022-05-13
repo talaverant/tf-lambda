@@ -95,7 +95,7 @@ resource "aws_iam_role_policy_attachment" "lambda_policy" {
 
 resource "aws_lambda_function" "hello_world" {
   function_name = "HelloWorld"
-  description = "SteveW webinar"
+  description = "GitOps controlled lambda function - Jose"
 
   s3_bucket = aws_s3_bucket.lambda_bucket.id
   s3_key = aws_s3_object.lambda_hello_world.key
@@ -117,7 +117,7 @@ resource "aws_cloudwatch_log_group" "hello_world" {
 // API Gateway
 resource "aws_apigatewayv2_api" "lambda" {
   name = "serverless_lambda_gw"
-  description = "SteveW webinar"
+  description = "GitOps controlled API Gateway - Jose"
   protocol_type = "HTTP"
 }
 
