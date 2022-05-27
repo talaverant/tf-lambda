@@ -10,7 +10,7 @@ spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
-    name: gitrepo-tflambda
+    name: tf-lambda
     namespace: flux-system
   varsFrom:
     - name: tf-aws-keys
