@@ -12,8 +12,11 @@ spec:
     kind: GitRepository
     name: tf-lambda
     namespace: flux-system
+  vars:
+    - name: ssh_public_key
+      value: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDFOj0o5f6d3fJXpDxl2WGmShdTu4DN6XMBzuMc3WLJTgAoObAKeRTj7iyLBaKIVn2GF54XHquRQD+iC3/9HKEBqGHKxiVNGfusbKCuXdsTl1s8NEQ5f6u5CoiA5wI0oP8iMqGm2+IjceeJwKl1t10alPpf6Pf91og6mtp5ydix36Ou611gc/3x++zpmF9kA7TDYaioNpp4BNj4d5MqSArEMuRVKAVr15n2Pb0CmKxcUBPjiiFVtOg1WqSZvzVvU6YHJG7d9Uivv6cyt+MdGGjJFjHOTmyq49tsq73Wt0Gp+5cD6BTeBDxNvQQKxryAPyClqiWwNKriFIZl2g8jIkZRreC/MOLPgtVv83n4Y8Nr+h6NSnswc05m5KdqXJjMX79x1BcUhNVwR4GaltCprDJ9R/LVNIr3J87LyXgCWK9+XW3zHC1u3bhf34m8jftA45orLg/ZCpQZUfiyCYw7fkarXQzjG09lJR++j+CjRRP7grUKL+w0zYbsIxLZ2AMhTLz/MpC+l8NqAKKb7mqNtuEh0A4i/oR6OLiv67laW1DIYDVhj/EohG8vDhmFG7rURds9ewNCOPACNEAFnAhAtGOkLjEwH2xkpAv8uY+mho6fSjEilynD7kyrv//hqHNv7qadle0ZVS7LsUb+fsg2tC7E1zcuuQRjkPqqHUvLdbjWmw== talaverant22@gmail.com
   varsFrom:
     - name: tf-aws-keys
       kind: Secret
   writeOutputsToSecret:
-    name: aws-lambda-output
+    name: aws-ec2-instance-output
